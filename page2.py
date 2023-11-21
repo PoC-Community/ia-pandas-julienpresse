@@ -14,3 +14,6 @@ print(data_info)
 
 column_names = data.columns
 print(column_names)
+
+missing_percentage = (data.isnull().mean() * 100)
+print(missing_percentage)
