@@ -30,7 +30,7 @@ all_roles = pd.concat([data['bluetop'], data['bluejungle'], data['bluemid'], dat
 most_played_champions = all_roles.value_counts().head(5)
 print(most_played_champions)
 
-lec_teams_data = data[data['league'] == 'LEC']
+lec_teams_data = data[data['league'] == 'LEC'].copy()
 lec_teams_data['winning_team'] = lec_teams_data.apply(lambda row: row['blueteam'] if row['result'] == 1 else row['redteam'], axis=1)
 lec_teams_wins = lec_teams_data['winning_team'].value_counts().reset_index()
 lec_teams_wins.columns = ['Team', 'Wins']
