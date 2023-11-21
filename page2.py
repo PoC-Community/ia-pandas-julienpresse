@@ -20,3 +20,7 @@ print(missing_percentage)
 
 missing_count = data.isnull().sum()
 print(missing_count)
+
+numerical_data = data.select_dtypes(include='number')
+column_names = numerical_data.columns
+print(column_names)
